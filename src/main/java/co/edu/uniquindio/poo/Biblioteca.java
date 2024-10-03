@@ -7,6 +7,7 @@ public class Biblioteca {
     private LinkedList<Prestamo> prestamos;
     private LinkedList<Libro> libros;
     
+    
     public Biblioteca(String nombre) {
         this.nombre = nombre;
         this.prestamos = new LinkedList<>();
