@@ -66,6 +66,10 @@ public class Biblioteca {
     public int cantidadPrestamos() {
         return prestamos.size();
     }
+    public static void mostrarMensaje(String mensaje){
+        System.out.println(mensaje);
+       
+    }
 
     @Override
     public String toString() {
