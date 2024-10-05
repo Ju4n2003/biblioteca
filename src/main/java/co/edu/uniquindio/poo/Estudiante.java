@@ -7,6 +7,11 @@ public class Estudiante extends Persona{
     public Estudiante (String nombre, String cedula, String correo, String telefono, int prestamosRealizados){
         super(nombre, cedula, correo, telefono);
         this.prestamosRealizados = 0;
+        assert nombre != null && !nombre.isBlank();
+        assert correo != null && !correo.isBlank();
+        assert telefono != null && !telefono.isBlank();
+        assert prestamosRealizados >= 0;
+        
     }
 
     @Override
