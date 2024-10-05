@@ -18,7 +18,7 @@ public class DetalleEditorial {
 
     @Override
     public String toString() {
-        return "DetalleEditorial [autor=" + autor + ", editorial=" + editorial + "]";
+        return " autor \n" + autor + " editorial \n" + editorial ;
     }
     
 }

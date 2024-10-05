@@ -36,7 +36,7 @@ public class Autor{
 
     @Override
     public String toString() {
-        return "Autor [nombre=" + nombre + ", apellido=" + apellido + "]";
+        return  "El nombre del autor es "+ nombre + " " + apellido ;
     }
 
     public LinkedList<DetalleLibro> getDetallesLibros() {
@@ -46,5 +46,7 @@ public class Autor{
     public void setDetallesLibros(LinkedList<DetalleLibro> detallesLibros) {
         this.detallesLibros = detallesLibros;
     }
+
+    
     
 }

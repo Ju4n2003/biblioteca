@@ -45,7 +45,7 @@ public class Editorial {
 
     @Override
     public String toString() {
-        return "Editorial [nombre=" + nombre + ", correo=" + correo + ", telefono=" + telefono + "]";
+        return "nombre de la editorial\n " + nombre + " el  correo de la editorial es \n" + correo + " el telefono de contacto es \n" + telefono ;
     }
 
     public LinkedList<DetalleEditorial> getDetallesEditoriale() {

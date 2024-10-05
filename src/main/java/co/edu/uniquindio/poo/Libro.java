@@ -84,8 +84,8 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Libro [codigo=" + codigo + ", isbn=" + isbn + ", titulo=" + titulo + ", fecha=" + fecha
-                + ", unidadDisponible=" + unidadDisponible + "]";
+        return "El codigo del libro es \n  " + codigo + " el  isbn es \n " + isbn + " el titulo del libro es \n " + titulo + " la fecha de su lanzamiento es \n " + fecha
+                + " unidades disponibles \n" + unidadDisponible ;
     }
 
     public void calcularIncrementoPrestamosIncluidos(){

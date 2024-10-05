@@ -53,4 +53,10 @@ public class Prestamo {
         detalle.getLibro().getPrestamosIncluidos();
         estudiante.incrementarPrestamos();
     }
+    @Override
+    public String toString() {
+        return "La cantidad es\n" + cantidad + "el total del prestamo es \n" + total + "los detalles del Prestamo son \n" + detallesPrestamo
+                + " el estudiante que pide el prestamo es \n" + estudiante + " el bibliotecario que lo atendio fue \n" + bibliotecario ;
+    }
+    
 }

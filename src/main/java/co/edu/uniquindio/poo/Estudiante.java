@@ -16,7 +16,7 @@ public class Estudiante extends Persona{
 
     @Override
     public String toString() {
-        return "nombre " + nombre + " cedula " + cedula + ", correo " + correo + ", telefono=" + telefono + "]";
+        return "El nombre del estudiante es \n " + nombre + " su  cedula es \n " + cedula + " su  correo es \n" + correo + " su telefono es \n " + telefono ;
     }
     public void incrementarPrestamos() {
         prestamosRealizados++;

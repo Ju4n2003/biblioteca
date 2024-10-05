@@ -19,4 +19,9 @@ public class DetalleLibro {
     public void setAutor(Autor autor) {
         this.autor = autor;
     }
+    @Override
+    public String toString() {
+        return " libro \n" + libro + " autor \n" + autor ;
+    }
+    
 }
