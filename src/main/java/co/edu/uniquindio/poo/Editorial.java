@@ -12,9 +12,9 @@ public class Editorial {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
-        assert nombre !null && !nombre.isBlanck():"";
-        assert correo!= null && !correo.isBlanck():"";
-        assert telefono!= null && !telefono.isBlanck():"";
+        assert nombre !=null && !nombre.isBlank():"";
+        assert correo!= null && !correo.isBlank():"";
+        assert telefono!= null && !telefono.isBlank():"";
         assert correo.contains("@");
 
     }

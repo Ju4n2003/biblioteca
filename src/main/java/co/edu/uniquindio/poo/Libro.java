@@ -19,10 +19,10 @@ public class Libro {
         this.unidadDisponible = unidadDisponible;
         this.prestamosIncluidos = 0;
         this.detallesLibros = new LinkedList<>();
-        assert codigo !=null && !codigo.isBlanck():"";
-        assert isbn!=null && !isbn.isBlanck():"";
-        assert titulo!=null && !titulo.isBlanck():"";
-        assert fecha!=null && !fecha.isBlanck():"";
+        assert codigo !=null && !codigo.isBlank():"";
+        assert isbn!=null && !isbn.isBlank():"";
+        assert titulo!=null && !titulo.isBlank():"";
+        assert fecha!=null && !fecha.isBlank():"";
         assert unidadDisponible >= 0 : "La cantidad de unidades disponibles no puede ser negativa";
     }
 
