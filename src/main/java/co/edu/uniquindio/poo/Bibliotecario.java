@@ -9,10 +9,10 @@ public class Bibliotecario extends Persona {
         super(nombre, cedula, correo, telefono);
         this.salario = salario;
         this.antiguedad = antiguedad;
-        assert nombre !=null && !nombre.isBlack():"";
-        assert cedula!=null && !cedula.isBlack():"";
-        assert correo!=null && !correo.isBlack():"";
-        assert telefono!=null && !telefono.isBlack():"";
+        assert nombre !=null && !nombre.isBlank():"";
+        assert cedula!=null && !cedula.isBlank():"";
+        assert correo!=null && !correo.isBlank():"";
+        assert telefono!=null && !telefono.isBlank():"";
         assert salario > 0 && antiguedad > 0 : "Los valores deben ser positivos.";
     }
 
