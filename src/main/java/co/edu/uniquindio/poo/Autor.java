@@ -1,12 +1,16 @@
 package co.edu.uniquindio.poo;
 
+import java.util.LinkedList;
+
 public class Autor{
     private String nombre;
     private String apellido;
+    private LinkedList<DetalleLibro> detallesLibros;
     
     public Autor(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.detallesLibros = new LinkedList<>();
     }
     
     public String getNombreCompleto() {
@@ -28,10 +32,19 @@ public class Autor{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
 
     @Override
     public String toString() {
         return "Autor [nombre=" + nombre + ", apellido=" + apellido + "]";
+    }
+
+    public LinkedList<DetalleLibro> getDetallesLibros() {
+        return detallesLibros;
+    }
+
+    public void setDetallesLibros(LinkedList<DetalleLibro> detallesLibros) {
+        this.detallesLibros = detallesLibros;
     }
     
 }

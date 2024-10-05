@@ -1,9 +1,12 @@
 package co.edu.uniquindio.poo;
 
+import java.util.LinkedList;
+
 public class Editorial {
     private String nombre;
     private String correo;
     private String telefono;
+    private LinkedList<DetalleEditorial> detallesEditoriale;
     
     public Editorial(String nombre, String correo, String telefono) {
         this.nombre = nombre;
@@ -38,6 +41,14 @@ public class Editorial {
     @Override
     public String toString() {
         return "Editorial [nombre=" + nombre + ", correo=" + correo + ", telefono=" + telefono + "]";
+    }
+
+    public LinkedList<DetalleEditorial> getDetallesEditoriale() {
+        return detallesEditoriale;
+    }
+
+    public void setDetallesEditoriale(LinkedList<DetalleEditorial> detallesEditoriale) {
+        this.detallesEditoriale = detallesEditoriale;
     }
     
 }
