@@ -6,6 +6,9 @@ public class Prestamo {
     public Prestamo(int cantidad, int total) {
         this.cantidad = cantidad;
         this.total = total;
+        assert cantidad >=0;
+        assert total >=0;
+        assert total >= cantidad;
     }
     public int getCantidad() {
         return cantidad;

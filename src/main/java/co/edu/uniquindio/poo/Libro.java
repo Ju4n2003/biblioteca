@@ -12,6 +12,11 @@ public class Libro {
         this.titulo = titulo;
         this.fecha = fecha;
         this.unidadDisponible = unidadDisponible;
+        assert codigo !=null && !codigo.isBlanck():"";
+        assert isbn!=null && !isbn.isBlanck():"";
+        assert titulo!=null && !titulo.isBlanck():"";
+        assert fecha!=null && !fecha.isBlanck():"";
+        assert unidadDisponible >= 0 : "La cantidad de unidades disponibles no puede ser negativa";
     }
     public String getCodigo() {
         return codigo;
