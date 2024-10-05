@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
  * Unit test for simple App.
  */
 public class PrestamoTest {
-    private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
+    private static final Logger LOG = Logger.getLogger(PrestamoTest.class.getName());
 
     @Test
     public void datosCompletos() {

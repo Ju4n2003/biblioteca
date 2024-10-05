@@ -11,10 +11,6 @@ public class Persona {
         this.cedula = cedula;
         this.correo = correo;
         this.telefono = telefono;
-        assert nombre !=null && !nombre.isBlank():"";
-        assert cedula!=null && !cedula.isBlank():"";
-        assert correo!=null && !correo.isBlank():"";
-        assert telefono!=null && !telefono.isBlank():"";
     }
     public String getNombre() {
         return nombre;
