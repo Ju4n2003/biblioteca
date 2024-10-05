@@ -7,16 +7,16 @@ public class Estudiante extends Persona{
     public Estudiante (String nombre, String cedula, String correo, String telefono, int prestamosRealizados){
         super(nombre, cedula, correo, telefono);
         this.prestamosRealizados = 0;
-        assert nombre != null && !nombre.isBlank();
-        assert correo != null && !correo.isBlank();
-        assert telefono != null && !telefono.isBlank();
-        assert prestamosRealizados >= 0;
-        
+        assert nombre != null && !nombre.isBlack():"";
+        assert cedula!= null && !cedula.isBlack():"";
+        assert correo!= null && !correo.isBlack() && correo.contains("@");
+        assert telefono!= null && !telefono.isBlack():"";
+        assert prestamosRealizados > 0 : "El número de préstamos realizados debe ser positivo";
     }
 
     @Override
     public String toString() {
-        return "Bibliotecario [nombre=" + nombre + " cedula=" + cedula + ", correo=" + correo + ", telefono=" + telefono + "]";
+        return "nombre " + nombre + " cedula " + cedula + ", correo " + correo + ", telefono=" + telefono + "]";
     }
     public void incrementarPrestamos() {
         prestamosRealizados++;
