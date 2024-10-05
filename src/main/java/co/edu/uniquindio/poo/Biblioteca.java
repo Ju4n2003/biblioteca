@@ -6,12 +6,15 @@ public class Biblioteca {
     private String nombre;
     private LinkedList<Prestamo> prestamos;
     private LinkedList<Libro> libros;
-    private LinkedList<Estudiante> estudiantes;
     private LinkedList<Bibliotecario> bibliotecarios;
-    
+    private LinkedList<Estudiante> estudiantes;
+
     public Biblioteca(String nombre) {
         this.nombre = nombre;
-        this.prestamos = new LinkedList<>();
+        prestamos = new LinkedList<>();
+        libros = new LinkedList<>();
+        bibliotecarios = new LinkedList<>();
+        estudiantes = new LinkedList<>();
     }
 
     public String getNombre() {
@@ -21,7 +24,7 @@ public class Biblioteca {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     public LinkedList<Prestamo> getPrestamos() {
         return prestamos;
     }
@@ -29,7 +32,6 @@ public class Biblioteca {
     public void setPrestamos(LinkedList<Prestamo> prestamos) {
         this.prestamos = prestamos;
     }
-    
 
     public LinkedList<Libro> getLibros() {
         return libros;
@@ -37,14 +39,6 @@ public class Biblioteca {
 
     public void setLibros(LinkedList<Libro> libros) {
         this.libros = libros;
-    }
-
-    public LinkedList<Estudiante> getEstudiantes() {
-        return estudiantes;
-    }
-
-    public void setEstudiantes(LinkedList<Estudiante> estudiantes) {
-        this.estudiantes = estudiantes;
     }
 
     public LinkedList<Bibliotecario> getBibliotecarios() {
@@ -55,100 +49,57 @@ public class Biblioteca {
         this.bibliotecarios = bibliotecarios;
     }
 
-    public void agregarPrestamo(Prestamo prestamo) {
-        prestamos.add(prestamo);
-    }
-    
-    public void eliminarPrestamo(Prestamo prestamo) {
-        prestamos.remove(prestamo);
-    }
-    
-    public int cantidadPrestamos() {
-        return prestamos.size();
-    }
-    public static void mostrarMensaje(String mensaje){
-        System.out.println(mensaje);
-       
+    public LinkedList<Estudiante> getEstudiantes() {
+        return estudiantes;
     }
 
-    @Override
-    public String toString() {
-        return "Biblioteca [nombre=" + nombre + "]";
+    public void setEstudiantes(LinkedList<Estudiante> estudiantes) {
+        this.estudiantes = estudiantes;
     }
 
-public void agregarEstudiante(Estudiante estudiante) {
-    if (validarCedulaEstudiante(estudiante.getCedula())) {
-        mostrarMensaje("Error: Estudiante ya creado");
-    } else {
-        estudiantes.add(estudiante);
-    }
-}
-
-public void agregarBibliotecario(Bibliotecario bibliotecario) {
-    if (validarCedulaBibliotecario(bibliotecario.getCedula())) {
-        mostrarMensaje("Error: Bibliotecario ya creado");
-    } else {
-        bibliotecarios.add(bibliotecario);
-    }
-}
-    public void validarCedulaEstudiante(String cedula){
-        boolean cedulaRepetida= false;
-        for (Estudiante estudiante :estudiantes ){
-            if(estudiante.getCedula().equals(cedula)){
-                cedula=true;
+    public Estudiante getEstudianteConMasPrestamos() {
+        Estudiante maxEstudiante = null;
+        int maxPrestamos = 0;
+        for (Estudiante estudiante : estudiantes) {
+            if (estudiante.getPrestamosRealizados() > maxPrestamos) {
+                maxEstudiante = estudiante;
+                maxPrestamos = estudiante.getPrestamosRealizados();
             }
         }
-        return cedulaRepetida;
+        return maxEstudiante;
     }
 
-    public void validarCedulaBibliotecario(String cedula){
-        boolean cedulaRepetida= false;
-        for (Bibliotecario bibliotecario :bibliotecarios ){
-            if(bibliotecario.getCedula().equals(cedula)){
-                cedula=true;
+    public Libro getCantidadLibroIncluidoEnPrestamos() {
+        Libro maxLibro = null;
+        int maxPrestamos = 0;
+        for (Libro libro : libros) {
+            if (libro.getPrestamosIncluidos() > maxPrestamos) {
+                maxLibro = libro;
+                maxPrestamos = libro.getPrestamosIncluidos();
             }
         }
-        return cedulaRepetida;
+        return maxLibro;
     }
 
-    public void eliminarEstudiante(String cedula){
-        for (Estudiante estudiante : estudiantes){
-            if(estudiante.getCedula().equals(cedula)){
-                estudiantes.remove(estudiante);
-                break;
+    public void mostrarPrestamosPorBibliotecario() {
+        for (Bibliotecario bibliotecario : bibliotecarios) {
+            int prestamosRealizados = 0;
+            for (Prestamo prestamo : prestamos) {
+                if (prestamo.getBibliotecario().equals(bibliotecario)) {
+                    prestamosRealizados++;
+                }
             }
+            System.out.println("Bibliotecario: " + bibliotecario.getNombre() + ", Préstamos realizados: " + prestamosRealizados);
         }
     }
 
-    public void eliminarBibliotecario(String cedula){
-        for (Bibliotecario bibliotecario : bibliotecarios){
-            if(bibliotecario.getCedula().equals(cedula)){
-                bibliotecarios.remove(bibliotecario);
-                break;
+    public double calcularTotalPagarBibliotecario(Bibliotecario bibliotecario) {
+        int prestamosRealizados = 0;
+        for (Prestamo prestamo : prestamos) {
+            if (prestamo.getBibliotecario().equals(bibliotecario)) {
+                prestamosRealizados++;
             }
         }
-
+        return bibliotecario.calcularSalario(prestamosRealizados);
     }
-    
-    public void actualizarEstudiante(String correo, String telefono){
-        for (Estudiante estudiante : estudiantes){
-            if(estudiante.getCedula().equals(cedula)){
-                estudiante.setTelefono(telefono);
-                estudiante.setCorreo(correo);
-                break;
-            }
-        }
-
-    }
-
-    public void actualizarBibliotecario(String correo, String telefono){
-        for (Bibliotecario bibliotecario : bibliotecarios){
-            if(bibliotecario.getCedula().equals(cedula)){
-                bibliotecario.setTelefono(telefono);
-                bibliotecario.setCorreo(correo);
-                break;
-            }
-        }
-    }
-
 }
