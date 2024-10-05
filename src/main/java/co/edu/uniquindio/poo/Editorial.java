@@ -12,6 +12,11 @@ public class Editorial {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
+        assert nombre !null && !nombre.isBlanck():"";
+        assert correo!= null && !correo.isBlanck():"";
+        assert telefono!= null && !telefono.isBlanck():"";
+        assert correo.contains("@");
+
     }
 
     public String getNombre() {

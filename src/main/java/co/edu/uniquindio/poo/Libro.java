@@ -19,6 +19,11 @@ public class Libro {
         this.unidadDisponible = unidadDisponible;
         this.prestamosIncluidos = 0;
         this.detallesLibros = new LinkedList<>();
+        assert codigo !=null && !codigo.isBlanck():"";
+        assert isbn!=null && !isbn.isBlanck():"";
+        assert titulo!=null && !titulo.isBlanck():"";
+        assert fecha!=null && !fecha.isBlanck():"";
+        assert unidadDisponible >= 0 : "La cantidad de unidades disponibles no puede ser negativa";
     }
 
     public String getCodigo() {

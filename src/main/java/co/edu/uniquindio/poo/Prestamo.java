@@ -11,9 +11,15 @@ public class Prestamo {
     public Prestamo(int cantidad, int total, Estudiante estudiante, Bibliotecario bibliotecario) {
         this.cantidad = cantidad;
         this.total = total;
+<<<<<<< HEAD
         this.detallesPrestamo = new LinkedList<>();
         this.estudiante= estudiante;
         this.bibliotecario = bibliotecario;
+=======
+        assert cantidad >=0;
+        assert total >=0;
+        assert total >= cantidad;
+>>>>>>> 9b634f501675f26330f2086e27b3d638a7b81075
     }
     public int getCantidad() {
         return cantidad;
